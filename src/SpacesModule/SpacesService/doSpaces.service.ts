@@ -16,7 +16,7 @@ export class DoSpacesService {
     return new Promise((resolve, reject) => {
       this.s3.putObject(
         {
-          Bucket: '<put-here-the-name-of-your-spaces-bucket>',
+          Bucket: 'nijatqulu',
           Key: fileName,
           Body: file.buffer,
           ACL: 'public-read',
@@ -24,7 +24,7 @@ export class DoSpacesService {
         (error: AWS.AWSError) => {
           if (!error) {
             resolve(
-              `<put-here-the-public-link-to-your-spaces-instance>/${fileName}`,
+              `https://nijatqulu.fra1.digitaloceanspaces.com/${fileName}`,
             );
           } else {
             reject(
